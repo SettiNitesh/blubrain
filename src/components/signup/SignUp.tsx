@@ -3,7 +3,7 @@ import SignUpForm from "./SignUpForm";
 const SignUp = () => {
   return (
     <section className="flex w-full h-screen">
-      <div className="w-1/2 bg-green bg-opacity-20 flex flex-col  items-center">
+      <div className="w-[60%] bg-green bg-opacity-20 flex flex-col  items-center">
         <p className="mt-[2.82rem] mx-[5.73rem] mb-[2.69rem] font-semibold text-[1.5rem] text-black tracking-[0.04rem] font-cormorant">
           Social media shared today, tomorrow or by location Welcome to World of
           Medicine
@@ -14,7 +14,7 @@ const SignUp = () => {
           className="w-[27rem] h-[27rem] items-center"
         />
       </div>
-      <div className="flex flex-col w-1/2">
+      <div className="flex flex-col w-[40%]">
         <div>
           <div className="w-full flex flex-col  p-16">
             <div className="flex items-start">

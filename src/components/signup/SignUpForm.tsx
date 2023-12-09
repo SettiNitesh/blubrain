@@ -27,7 +27,7 @@ const SignUpForm = () => {
               <FormGroup>
                 <FormControlLabel
                   control={<Checkbox color="success" />}
-                  label={field.label}
+                  label={<span className="text-sm">{field.label}</span>}
                 />
               </FormGroup>
             )}
