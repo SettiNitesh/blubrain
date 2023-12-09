@@ -1,26 +1,25 @@
 import { useState } from "react";
 
-import { SignUp } from "../../components";
-import {
-  ISignUpFieldsData,
-  signUpFieldsData,
-} from "../../components/signup/SignUpFields";
+import { Login } from "../../components";
 import { trimFieldValues } from "../../utils/helper";
-import { ISignUpPayload } from "../../interfaces";
-import { successToast } from "../../shared";
-import { useRegisterMutation } from "../../services";
+import { ISignInPayload } from "../../interfaces";
+import {
+  ILoginFieldsData,
+  loginFieldsData,
+} from "../../components/login/LoginFields";
+import { useLoginMutation } from "../../services";
 
-const SignUpContainer = () => {
+const SignInContainer = () => {
   const [formFields, setFormFields] =
-    useState<ISignUpFieldsData>(signUpFieldsData);
+    useState<ILoginFieldsData>(loginFieldsData);
 
-  const [signUpUser, { isLoading }] = useRegisterMutation();
+  const [signInUser, { isLoading }] = useLoginMutation();
 
   const handleChange = (name: string, value: string | boolean) => {
     setFormFields((prev) => ({
       ...prev,
       [name]: {
-        ...prev[name as keyof ISignUpFieldsData],
+        ...prev[name as keyof ILoginFieldsData],
         value,
         isError: false,
       },
@@ -31,7 +30,7 @@ const SignUpContainer = () => {
   const errorStatus = (): boolean => {
     let isError = false;
     Object.keys(formFields).forEach((fieldName: string) => {
-      const formFieldName = fieldName as keyof ISignUpFieldsData;
+      const formFieldName = fieldName as keyof ILoginFieldsData;
       if (
         formFields[formFieldName].isRequired &&
         !trimFieldValues(formFields[formFieldName])
@@ -51,10 +50,10 @@ const SignUpContainer = () => {
 
   /*These Function is used to reset the Form Fields */
   const resetFormFields = () => {
-    const resetFields: ISignUpFieldsData = signUpFieldsData;
+    const resetFields: ILoginFieldsData = loginFieldsData;
     let val: string | boolean = "";
     Object.keys(formFields).forEach((field) => {
-      const fieldData = field as keyof ISignUpFieldsData;
+      const fieldData = field as keyof ILoginFieldsData;
       if (typeof formFields[fieldData].value === "boolean") {
         val = false;
       }
@@ -67,23 +66,21 @@ const SignUpContainer = () => {
     return resetFields;
   };
 
-  const signUpUserPayload = (): ISignUpPayload => {
+  const signInUserPayload = (): ISignInPayload => {
     return {
       email: trimFieldValues(formFields.userEmail),
-      username: trimFieldValues(formFields.userName),
       password: trimFieldValues(formFields.userPassword),
     };
   };
 
-  const signUpHandler = async () => {
+  const signInHandler = async () => {
     if (!errorStatus()) {
-      await signUpUser({
-        payload: signUpUserPayload(),
+      await signInUser({
+        payload: signInUserPayload(),
       })
         .unwrap()
         .then((payload) => {
           if (payload) {
-            successToast("Signup Successfull !!");
             setFormFields(resetFormFields());
           }
         })
@@ -92,14 +89,14 @@ const SignUpContainer = () => {
   };
 
   return (
-    <SignUp
+    <Login
       isLoading={isLoading}
-      isButtonEnabled={!formFields.privatePolicy.value as boolean}
+      isButtonEnabled={false}
       formFields={formFields}
       handleChange={handleChange}
-      signUpHandler={signUpHandler}
+      signInHandler={signInHandler}
     />
   );
 };
 
-export default SignUpContainer;
+export default SignInContainer;

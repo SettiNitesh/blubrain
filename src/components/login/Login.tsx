@@ -1,37 +1,37 @@
 import { LandingLayout } from "../shared";
-import { ISignUpFieldsData } from "./SignUpFields";
-import SignUpForm from "./SignUpForm";
+import { ILoginFieldsData } from "./LoginFields";
+import LoginForm from "./LoginForm";
 
-interface ISignUpProps {
-  formFields: ISignUpFieldsData;
+interface ILoginProps {
+  formFields: ILoginFieldsData;
   isLoading: boolean;
   isButtonEnabled: boolean;
-  signUpHandler: () => void;
+  signInHandler: () => void;
   handleChange: (name: string, value: string | boolean) => void;
 }
 
-const SignUp = ({
+const Login = ({
   formFields,
   isLoading,
   isButtonEnabled,
-  signUpHandler,
+  signInHandler,
   handleChange,
-}: ISignUpProps) => {
+}: ILoginProps) => {
   return (
     <LandingLayout
-      title="Create account"
+      title="Login account"
       component={
         <>
-          <SignUpForm
+          <LoginForm
             isLoading={isLoading}
             isButtonEnabled={isButtonEnabled}
             formFields={formFields}
             handleChange={handleChange}
-            signUpHandler={signUpHandler}
+            signInHandler={signInHandler}
           />
           <p className="mt-[1.41rem]  flex items-center justify-center font-semibold">
-            Do you have an account?
-            <span className="text-green ml-2">Login</span>
+            Don't have an account?
+            <span className="text-green ml-2">SignUp</span>
           </p>
         </>
       }
@@ -39,4 +39,4 @@ const SignUp = ({
   );
 };
 
-export default SignUp;
+export default Login;

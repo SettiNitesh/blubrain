@@ -1,3 +1,3 @@
-import { useRegisterMutation } from "./auth/authService";
+import { useRegisterMutation, useLoginMutation } from "./auth/authService";
 
-export { useRegisterMutation };
+export { useRegisterMutation, useLoginMutation };

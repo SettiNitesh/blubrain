@@ -1,3 +1,4 @@
 import BluBrainTextField from "./BluBrainTextField";
+import LandingLayout from "./LandingLayout";
 
-export { BluBrainTextField };
+export { BluBrainTextField, LandingLayout };

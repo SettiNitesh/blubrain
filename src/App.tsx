@@ -1,6 +1,6 @@
 import { ToastContainer } from "react-toastify";
 import "./App.css";
-import { SignUpContainer } from "./containers";
+import { SignInContainer } from "./containers";
 import "react-toastify/dist/ReactToastify.css";
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
         autoClose={2500}
         hideProgressBar={false}
       />
-      <SignUpContainer />
+      <SignInContainer />
     </div>
   );
 }
