@@ -1,6 +1,21 @@
+import { ISignUpFieldsData } from "./SignUpFields";
 import SignUpForm from "./SignUpForm";
 
-const SignUp = () => {
+interface ISignUpProps {
+  formFields: ISignUpFieldsData;
+  isLoading: boolean;
+  isButtonEnabled: boolean;
+  signUpHandler: () => void;
+  handleChange: (name: string, value: string | boolean) => void;
+}
+
+const SignUp = ({
+  formFields,
+  isLoading,
+  isButtonEnabled,
+  signUpHandler,
+  handleChange,
+}: ISignUpProps) => {
   return (
     <section className="flex w-full h-screen">
       <div className="w-[60%] bg-green bg-opacity-20 flex flex-col  items-center">
@@ -35,7 +50,13 @@ const SignUp = () => {
               </p>
               <p className="text-xs">For Social Media and Hospital Services</p>
             </div>
-            <SignUpForm />
+            <SignUpForm
+              isLoading={isLoading}
+              isButtonEnabled={isButtonEnabled}
+              formFields={formFields}
+              handleChange={handleChange}
+              signUpHandler={signUpHandler}
+            />
             <p className="mt-[1.41rem]  flex items-center justify-center font-semibold">
               Don’t have an account?
               <span className="text-green ml-2">Login</span>

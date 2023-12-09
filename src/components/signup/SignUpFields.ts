@@ -3,7 +3,7 @@ import { IFields } from "../../interfaces";
 export interface ISignUpFieldsData {
   userName: IFields;
   userEmail: IFields;
-  userpassword: IFields;
+  userPassword: IFields;
   confirmPassword: IFields;
   privatePolicy: IFields;
 }
@@ -12,11 +12,13 @@ export const signUpFieldsData: ISignUpFieldsData = {
   userName: {
     key: "userName",
     placeHolder: "Enter your username",
-    label: "username",
+    label: "Username",
     type: "text",
     isRequired: true,
     value: "",
+    isError: false,
     maxLength: 150,
+    errorMessage: "This Field is Required",
   },
   userEmail: {
     key: "userEmail",
@@ -25,16 +27,20 @@ export const signUpFieldsData: ISignUpFieldsData = {
     type: "text",
     isRequired: true,
     value: "",
+    isError: false,
     maxLength: 150,
+    errorMessage: "This Field is Required",
   },
-  userpassword: {
+  userPassword: {
     key: "userPassword",
     placeHolder: "Enter your Password",
     label: "Password",
     type: "password",
     isRequired: true,
     value: "",
+    isError: false,
     maxLength: 150,
+    errorMessage: "This Field is Required",
   },
   confirmPassword: {
     key: "confirmPassword",
@@ -43,7 +49,9 @@ export const signUpFieldsData: ISignUpFieldsData = {
     type: "password",
     isRequired: true,
     value: "",
+    isError: false,
     maxLength: 150,
+    errorMessage: "This Field is Required",
   },
   privatePolicy: {
     key: "privatePolicy",
