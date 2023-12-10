@@ -9,10 +9,14 @@ import { trimFieldValues } from "../../utils/helper";
 import { ISignUpPayload } from "../../interfaces";
 import { successToast } from "../../shared";
 import { useRegisterMutation } from "../../services";
+import { useNavigate } from "react-router-dom";
+import { AppPath } from "../../routes";
 
 const SignUpContainer = () => {
   const [formFields, setFormFields] =
     useState<ISignUpFieldsData>(signUpFieldsData);
+
+  const navigate = useNavigate();
 
   const [signUpUser, { isLoading }] = useRegisterMutation();
 
@@ -91,6 +95,10 @@ const SignUpContainer = () => {
     }
   };
 
+  const handleSignInHandler = (): void => {
+    navigate(AppPath.login);
+  };
+
   return (
     <SignUp
       isLoading={isLoading}
@@ -98,6 +106,7 @@ const SignUpContainer = () => {
       formFields={formFields}
       handleChange={handleChange}
       signUpHandler={signUpHandler}
+      handleSignInHandler={handleSignInHandler}
     />
   );
 };
