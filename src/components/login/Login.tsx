@@ -7,6 +7,7 @@ interface ILoginProps {
   isLoading: boolean;
   isButtonEnabled: boolean;
   signInHandler: () => void;
+  handleSignUpHandler: () => void;
   handleChange: (name: string, value: string | boolean) => void;
 }
 
@@ -15,6 +16,7 @@ const Login = ({
   isLoading,
   isButtonEnabled,
   signInHandler,
+  handleSignUpHandler,
   handleChange,
 }: ILoginProps) => {
   return (
@@ -31,7 +33,12 @@ const Login = ({
           />
           <p className="mt-[1.41rem]  flex items-center justify-center font-semibold">
             Don't have an account?
-            <span className="text-green ml-2">SignUp</span>
+            <span
+              className="text-green ml-2 cursor-pointer"
+              onClick={handleSignUpHandler}
+            >
+              SignUp
+            </span>
           </p>
         </>
       }

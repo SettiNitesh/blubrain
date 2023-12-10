@@ -8,10 +8,14 @@ import {
   loginFieldsData,
 } from "../../components/login/LoginFields";
 import { useLoginMutation } from "../../services";
+import { useNavigate } from "react-router-dom";
+import { AppPath } from "../../routes";
 
 const SignInContainer = () => {
   const [formFields, setFormFields] =
     useState<ILoginFieldsData>(loginFieldsData);
+
+  const navigate = useNavigate();
 
   const [signInUser, { isLoading }] = useLoginMutation();
 
@@ -88,6 +92,10 @@ const SignInContainer = () => {
     }
   };
 
+  const handleSignUpHandler = (): void => {
+    navigate(AppPath.signup);
+  };
+
   return (
     <Login
       isLoading={isLoading}
@@ -95,6 +103,7 @@ const SignInContainer = () => {
       formFields={formFields}
       handleChange={handleChange}
       signInHandler={signInHandler}
+      handleSignUpHandler={handleSignUpHandler}
     />
   );
 };
