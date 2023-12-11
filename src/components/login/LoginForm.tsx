@@ -1,7 +1,7 @@
+import { LoadingButton } from '@mui/lab';
 import { IFields } from '../../interfaces';
 import { BluBrainTextField } from '../shared';
 import { ILoginFieldsData } from './LoginFields';
-import { LoadingButton } from '@mui/lab';
 
 interface ILogInFormProps {
   isLoading: boolean;
@@ -16,7 +16,7 @@ const LogInForm = ({ isLoading, isButtonEnabled, formFields, signInHandler, hand
     <div className="grid w-full">
       {Object.values(formFields).map((field: IFields, index: number) => {
         return (
-          <div className="mt-5">
+          <div className="mt-5" key={`${field.key}-${index}`}>
             {(field.type === 'text' || field.type === 'password') && (
               <BluBrainTextField
                 key={`${field.key}-${index}`}
