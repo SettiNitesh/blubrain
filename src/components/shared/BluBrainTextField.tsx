@@ -1,6 +1,6 @@
-import { ChangeEventHandler } from "react";
+import { ChangeEventHandler } from 'react';
 
-import { SxProps, TextField, TextFieldVariants, Theme } from "@mui/material";
+import { SxProps, TextField, TextFieldVariants, Theme } from '@mui/material';
 
 interface ITextFieldProps {
   type: string;

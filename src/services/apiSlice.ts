@@ -1,5 +1,5 @@
-import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { GetBaseUrl } from "../utils";
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { GetBaseUrl } from '../utils';
 
 const BASE_URL = GetBaseUrl();
 
@@ -8,7 +8,7 @@ const baseQuery = fetchBaseQuery({
 });
 
 export const apiSlice = createApi({
-  reducerPath: "api",
+  reducerPath: 'api',
   baseQuery: baseQuery,
   tagTypes: [],
   endpoints: () => ({}),

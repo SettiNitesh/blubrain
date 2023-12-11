@@ -1,20 +1,16 @@
-import { useState } from "react";
+import { useState } from 'react';
 
-import { SignUp } from "../../components";
-import {
-  ISignUpFieldsData,
-  signUpFieldsData,
-} from "../../components/signup/SignUpFields";
-import { trimFieldValues } from "../../utils/helper";
-import { ISignUpPayload } from "../../interfaces";
-import { successToast } from "../../shared";
-import { useRegisterMutation } from "../../services";
-import { useNavigate } from "react-router-dom";
-import { AppPath } from "../../routes";
+import { SignUp } from '../../components';
+import { ISignUpFieldsData, signUpFieldsData } from '../../components/signup/SignUpFields';
+import { trimFieldValues } from '../../utils/helper';
+import { ISignUpPayload } from '../../interfaces';
+import { successToast } from '../../shared';
+import { useRegisterMutation } from '../../services';
+import { useNavigate } from 'react-router-dom';
+import { AppPath } from '../../routes';
 
 const SignUpContainer = () => {
-  const [formFields, setFormFields] =
-    useState<ISignUpFieldsData>(signUpFieldsData);
+  const [formFields, setFormFields] = useState<ISignUpFieldsData>(signUpFieldsData);
 
   const navigate = useNavigate();
 
@@ -36,10 +32,7 @@ const SignUpContainer = () => {
     let isError = false;
     Object.keys(formFields).forEach((fieldName: string) => {
       const formFieldName = fieldName as keyof ISignUpFieldsData;
-      if (
-        formFields[formFieldName].isRequired &&
-        !trimFieldValues(formFields[formFieldName])
-      ) {
+      if (formFields[formFieldName].isRequired && !trimFieldValues(formFields[formFieldName])) {
         isError = true;
         setFormFields((prev) => ({
           ...prev,
@@ -56,10 +49,10 @@ const SignUpContainer = () => {
   /*These Function is used to reset the Form Fields */
   const resetFormFields = () => {
     const resetFields: ISignUpFieldsData = signUpFieldsData;
-    let val: string | boolean = "";
+    let val: string | boolean = '';
     Object.keys(formFields).forEach((field) => {
       const fieldData = field as keyof ISignUpFieldsData;
-      if (typeof formFields[fieldData].value === "boolean") {
+      if (typeof formFields[fieldData].value === 'boolean') {
         val = false;
       }
       resetFields[fieldData] = {
@@ -87,7 +80,7 @@ const SignUpContainer = () => {
         .unwrap()
         .then((payload) => {
           if (payload) {
-            successToast("Signup Successfull !!");
+            successToast('Signup Successfull !!');
             setFormFields(resetFormFields());
           }
         })

@@ -1,0 +1,14 @@
+{
+  "extends": ["plugin:prettier/recommended", "prettier/flowtype", "prettier/standard"],
+  "bracketSpacing": true,
+  "trailingComma": "es5",
+  "tabWidth": 2,
+  "printWidth": 120,
+  "arrowParens": "always",
+  "semi": true,
+  "singleQuote": true,
+  "importOrder": ["^react", "^[@]", "^react$", "^(?!.*.s?css$)^[./^[a-zA-Z_]+$", "\\.s?css$"],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true,
+  "endOfLine": "lf"
+}

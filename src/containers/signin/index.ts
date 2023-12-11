@@ -1,3 +1,3 @@
-import SignInContainer from "./SignInContainer";
+import SignInContainer from './SignInContainer';
 
 export { SignInContainer };

@@ -1,15 +1,12 @@
-import { Navigate, useLocation, Outlet } from "react-router-dom";
-import { Dashboard } from "../components";
+import { Navigate, useLocation, Outlet } from 'react-router-dom';
+import { Dashboard } from '../components';
 
 interface IProtectedRouteProps {
   isAuthenticated: boolean;
   redirectTo: string;
 }
 
-const ProtectedRoute = ({
-  isAuthenticated,
-  redirectTo,
-}: IProtectedRouteProps) => {
+const ProtectedRoute = ({ isAuthenticated, redirectTo }: IProtectedRouteProps) => {
   const location = useLocation();
   if (isAuthenticated) {
     return (

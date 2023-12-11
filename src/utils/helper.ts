@@ -1,10 +1,10 @@
-import { IFields } from "../interfaces";
+import { IFields } from '../interfaces';
 
 export const Http = Object.freeze({
-  POST: "POST",
-  PUT: "PUT",
-  PATCH: "PATCH",
-  DELETE: "DELETE",
+  POST: 'POST',
+  PUT: 'PUT',
+  PATCH: 'PATCH',
+  DELETE: 'DELETE',
 });
 
 export const GetBaseUrl = () => {

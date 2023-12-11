@@ -1,6 +1,6 @@
-import { Home } from "../components";
-import { SignInContainer, SignUpContainer } from "../containers";
-import { AppPath } from "./RouteNames";
+import { Home } from '../components';
+import { SignInContainer, SignUpContainer } from '../containers';
+import { AppPath } from './RouteNames';
 
 export interface IRouteConfig {
   path: string;

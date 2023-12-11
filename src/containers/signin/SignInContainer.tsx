@@ -1,19 +1,15 @@
-import { useState } from "react";
+import { useState } from 'react';
 
-import { Login } from "../../components";
-import { trimFieldValues } from "../../utils/helper";
-import { ISignInPayload } from "../../interfaces";
-import {
-  ILoginFieldsData,
-  loginFieldsData,
-} from "../../components/login/LoginFields";
-import { useLoginMutation } from "../../services";
-import { useNavigate } from "react-router-dom";
-import { AppPath } from "../../routes";
+import { Login } from '../../components';
+import { trimFieldValues } from '../../utils/helper';
+import { ISignInPayload } from '../../interfaces';
+import { ILoginFieldsData, loginFieldsData } from '../../components/login/LoginFields';
+import { useLoginMutation } from '../../services';
+import { useNavigate } from 'react-router-dom';
+import { AppPath } from '../../routes';
 
 const SignInContainer = () => {
-  const [formFields, setFormFields] =
-    useState<ILoginFieldsData>(loginFieldsData);
+  const [formFields, setFormFields] = useState<ILoginFieldsData>(loginFieldsData);
 
   const navigate = useNavigate();
 
@@ -35,10 +31,7 @@ const SignInContainer = () => {
     let isError = false;
     Object.keys(formFields).forEach((fieldName: string) => {
       const formFieldName = fieldName as keyof ILoginFieldsData;
-      if (
-        formFields[formFieldName].isRequired &&
-        !trimFieldValues(formFields[formFieldName])
-      ) {
+      if (formFields[formFieldName].isRequired && !trimFieldValues(formFields[formFieldName])) {
         isError = true;
         setFormFields((prev) => ({
           ...prev,
@@ -55,10 +48,10 @@ const SignInContainer = () => {
   /*These Function is used to reset the Form Fields */
   const resetFormFields = () => {
     const resetFields: ILoginFieldsData = loginFieldsData;
-    let val: string | boolean = "";
+    let val: string | boolean = '';
     Object.keys(formFields).forEach((field) => {
       const fieldData = field as keyof ILoginFieldsData;
-      if (typeof formFields[fieldData].value === "boolean") {
+      if (typeof formFields[fieldData].value === 'boolean') {
         val = false;
       }
       resetFields[fieldData] = {

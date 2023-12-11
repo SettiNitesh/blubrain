@@ -1,6 +1,6 @@
-import { LandingLayout } from "../shared";
-import { ILoginFieldsData } from "./LoginFields";
-import LoginForm from "./LoginForm";
+import { LandingLayout } from '../shared';
+import { ILoginFieldsData } from './LoginFields';
+import LoginForm from './LoginForm';
 
 interface ILoginProps {
   formFields: ILoginFieldsData;
@@ -33,10 +33,7 @@ const Login = ({
           />
           <p className="mt-[1.41rem]  flex items-center justify-center font-semibold">
             Don't have an account?
-            <span
-              className="text-green ml-2 cursor-pointer"
-              onClick={handleSignUpHandler}
-            >
+            <span className="text-green ml-2 cursor-pointer" onClick={handleSignUpHandler}>
               SignUp
             </span>
           </p>
