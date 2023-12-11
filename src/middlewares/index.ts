@@ -1,3 +1,3 @@
-import ErrorMiddleWare from "./ErrorMiddleWare";
+import ErrorMiddleWare from './ErrorMiddleWare';
 
 export { ErrorMiddleWare };

@@ -1,4 +1,4 @@
-import { IFields } from "../../interfaces";
+import { IFields } from '../../interfaces';
 
 export interface ILoginFieldsData {
   userEmail: IFields;
@@ -7,25 +7,25 @@ export interface ILoginFieldsData {
 
 export const loginFieldsData: ILoginFieldsData = {
   userEmail: {
-    key: "userEmail",
-    placeHolder: "Enter your Email",
-    label: "Email",
-    type: "text",
+    key: 'userEmail',
+    placeHolder: 'Enter your Email',
+    label: 'Email',
+    type: 'text',
     isRequired: true,
-    value: "",
+    value: '',
     isError: false,
     maxLength: 150,
-    errorMessage: "This Field is Required",
+    errorMessage: 'This Field is Required',
   },
   userPassword: {
-    key: "userPassword",
-    placeHolder: "Enter your Password",
-    label: "Password",
-    type: "password",
+    key: 'userPassword',
+    placeHolder: 'Enter your Password',
+    label: 'Password',
+    type: 'password',
     isRequired: true,
-    value: "",
+    value: '',
     isError: false,
     maxLength: 150,
-    errorMessage: "This Field is Required",
+    errorMessage: 'This Field is Required',
   },
 };

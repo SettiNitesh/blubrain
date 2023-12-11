@@ -1,3 +1,3 @@
-import { GetBaseUrl } from "./helper";
+import { GetBaseUrl } from './helper';
 
 export { GetBaseUrl };

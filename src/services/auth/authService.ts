@@ -1,7 +1,7 @@
-import { ISignInPayload, ISignUpPayload } from "../../interfaces";
-import { Http } from "../../utils/helper";
-import { API_ENDPOINTS } from "../apiEndpoints";
-import { apiSlice } from "../apiSlice";
+import { ISignInPayload, ISignUpPayload } from '../../interfaces';
+import { Http } from '../../utils/helper';
+import { API_ENDPOINTS } from '../apiEndpoints';
+import { apiSlice } from '../apiSlice';
 
 export const authService = apiSlice.injectEndpoints({
   endpoints: (builder) => ({

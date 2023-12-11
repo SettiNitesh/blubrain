@@ -1,0 +1,45 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "react-app",
+    "react-app/jest",
+    "eslint:recommended",
+    "eslint-config-prettier",
+    "plugin:react/recommended",
+    "plugin:prettier/recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["react", "eslint-plugin-prettier", "@typescript-eslint"],
+  "rules": {
+    "react/react-in-jsx-scope": "off",
+    "prettier/prettier": "error",
+    "@typescript-eslint/no-explicit-any": [
+      "warn",
+      {
+        "ignoreRestArgs": true
+      }
+    ],
+    "no-console": "warn",
+    "arrow-parens": "error",
+    "arrow-spacing": "warn",
+    "no-mixed-spaces-and-tabs": 1,
+    "no-redeclare": 0,
+    "no-this-before-super": 1,
+    "no-unreachable": 1,
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": "warn",
+    "no-use-before-define": 0,
+    "no-const-assign": 1,
+    "no-extra-semi": 0,
+    "semi": 0,
+    "no-extend-native": ["error", { "exceptions": ["Object", "String"] }]
+  },
+  "globals": {
+    "JSX": true
+  }
+}

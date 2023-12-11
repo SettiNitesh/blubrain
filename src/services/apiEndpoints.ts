@@ -1,4 +1,4 @@
-import { HMS_PATH } from "../utils/helper";
+import { HMS_PATH } from '../utils/helper';
 
 export const API_ENDPOINTS = {
   authentication: {

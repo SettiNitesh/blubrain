@@ -1,7 +1,7 @@
 export interface IFields {
   key: string;
   label: string;
-  type: "text" | "date" | "dropDown" | "checkbox" | "password";
+  type: 'text' | 'date' | 'dropDown' | 'checkbox' | 'password';
   placeHolder?: string;
   isRequired: boolean;
   isError?: boolean;

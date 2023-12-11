@@ -1,0 +1,21 @@
+{
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.stickyScroll.enabled": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+  "editor.guides.bracketPairs": true,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit",
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.stylelint": "explicit"
+  },
+  "css.validate": false, // Disable css built-in lint
+  "scss.validate": false, // Disable scss lint (optional if using scss)
+  "stylelint.enable": true, // Enable sytlelint
+  "stylelint.validate": ["css", "scss"],
+  "[typescript][typescriptreact]": {
+    "editor.tabSize": 2
+  },
+  "files.eol": "\n"
+}

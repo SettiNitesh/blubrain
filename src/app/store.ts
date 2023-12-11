@@ -1,8 +1,8 @@
-import { configureStore } from "@reduxjs/toolkit";
+import { configureStore } from '@reduxjs/toolkit';
 
-import { apiSlice } from "../services/apiSlice";
-import authReducer from "../services/auth/authSlice";
-import { ErrorMiddleWare } from "../middlewares";
+import { apiSlice } from '../services/apiSlice';
+import authReducer from '../services/auth/authSlice';
+import { ErrorMiddleWare } from '../middlewares';
 
 export const store = configureStore({
   reducer: {
