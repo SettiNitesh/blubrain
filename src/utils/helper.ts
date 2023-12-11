@@ -8,7 +8,7 @@ export const Http = Object.freeze({
 });
 
 export const GetBaseUrl = () => {
-  const API_URL = `https://6ee0-106-0-38-73.ngrok-free.app`;
+  const API_URL = `http://localhost:4000`;
 
   return API_URL;
 };
