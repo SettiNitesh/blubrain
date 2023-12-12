@@ -2,7 +2,7 @@ import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 
 import { ToastContainer } from "react-toastify";
 
-import { AppPath, ProtectedRoute, PublicRoutes, PrivateRoutes } from "./routes";
+import { AppPath, PrivateRoutes, ProtectedRoute, PublicRoutes } from "./routes";
 import { IRouteConfig } from "./routes/RouteConfig";
 
 import "react-toastify/dist/ReactToastify.css";
@@ -11,7 +11,7 @@ import "./App.css";
 
 function App() {
   const location = useLocation();
-  const isAuthenticated = false;
+  const isAuthenticated = true;
 
   const presistedPath = location.state?.pathname
     ? `${location.state.pathname}${location.state.search}`
