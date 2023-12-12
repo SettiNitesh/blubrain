@@ -1,4 +1,4 @@
-import { ISignInPayload, ISignUpPayload } from '../../interfaces';
+import { ILoginResponse, ISignInPayload, ISignUpPayload } from '../../interfaces';
 import { Http } from '../../utils/helper';
 import { API_ENDPOINTS } from '../apiEndpoints';
 import { apiSlice } from '../apiSlice';
@@ -13,7 +13,7 @@ export const authService = apiSlice.injectEndpoints({
       }),
     }),
 
-    login: builder.mutation<string, { payload: ISignInPayload }>({
+    login: builder.mutation<ILoginResponse, { payload: ISignInPayload }>({
       query: ({ payload }) => ({
         url: API_ENDPOINTS.authentication.signIn,
         method: Http.POST,
