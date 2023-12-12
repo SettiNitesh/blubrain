@@ -1,17 +1,42 @@
-import { Home } from '../components';
-import { SignInContainer, SignUpContainer } from '../containers';
+import { ComingSoon } from '../components';
+import { HomeContainer, SignInContainer, SignUpContainer } from '../containers';
 import { AppPath } from './RouteNames';
 
 export interface IRouteConfig {
   path: string;
   component: React.ComponentType;
   subRoutes?: IRouteConfig[];
+  children?: IRouteConfig[]; //For adding nested routes using interface.
 }
 
 const PrivateRoutes: IRouteConfig[] = [
   {
     path: AppPath.home,
-    component: Home,
+    component: HomeContainer,
+  },
+  {
+    path: AppPath.search,
+    component: ComingSoon,
+  },
+  {
+    path: AppPath.explore,
+    component: ComingSoon,
+  },
+  {
+    path: AppPath.messages,
+    component: ComingSoon,
+  },
+  {
+    path: AppPath.notifications,
+    component: ComingSoon,
+  },
+  {
+    path: AppPath.create,
+    component: ComingSoon,
+  },
+  {
+    path: AppPath.profile,
+    component: ComingSoon,
   },
 ];
 
