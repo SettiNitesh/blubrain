@@ -3,4 +3,5 @@ module.exports = {
   black: '#1D1D1D',
   green: '#199A8E',
   darkRed: '#A4262C',
+  gray: '#f9fafb',
 };

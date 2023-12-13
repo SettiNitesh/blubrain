@@ -1,5 +1,5 @@
 import { ComingSoon } from '../components';
-import { HomeContainer, SignInContainer, SignUpContainer } from '../containers';
+import { HomeContainer, ProfileContainer, SignInContainer, SignUpContainer } from '../containers';
 import { AppPath } from './RouteNames';
 
 export interface IRouteConfig {
@@ -36,7 +36,7 @@ const PrivateRoutes: IRouteConfig[] = [
   },
   {
     path: AppPath.profile,
-    component: ComingSoon,
+    component: ProfileContainer,
   },
 ];
 
