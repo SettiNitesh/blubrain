@@ -20,7 +20,7 @@ const Profile = () => {
                 key={`${button.title}-${index}`}
                 title={button.title}
                 onClick={() => null}
-                styles="rounded-[0.5rem] bg-green text-[0.9rem] px-[1rem] mx-1 tracking-wider opacity-90"
+                styles="rounded-[0.5rem] bg-green text-[0.9rem] px-[1rem] mx-3 tracking-wider opacity-90"
               />
             );
           })}
@@ -29,7 +29,7 @@ const Profile = () => {
           </IconButton>
         </div>
         {/* Posts Count , Followers Count , Following Count */}
-        <div className="flex justify-start gap-x-7 pt-3">
+        <div className="flex justify-start gap-x-12 pt-3">
           {Object.values(profileActionItems).map((actionItem: IAction, index) => {
             return (
               <div key={`${actionItem.key}-${index}`} className="cursor-pointer">
