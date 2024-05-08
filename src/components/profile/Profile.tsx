@@ -1,11 +1,26 @@
 import { Settings } from '@mui/icons-material';
 import { Avatar, IconButton } from '@mui/material';
+import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { useGetCurrentUserDetailsQuery } from '../../services';
+import { selectUser } from '../../services/auth/authSlice';
 import { BluBrainButton } from '../../shared';
 import { IAction, ILabel, profileActionItems, profileDetails, profileHeaderButtons } from './ProfileItems';
 
 const Profile = () => {
+  const userId = useSelector(selectUser)?.uid;
+
+  const { data: currentUserData } = useGetCurrentUserDetailsQuery(userId ?? '', {
+    skip: !'',
+  });
+
+  useEffect(() => {
+    // eslint-disable-next-line no-console
+    console.log(currentUserData);
+  }, [currentUserData]);
+
   return (
-    <div className="bg-gray h-screen flex justify-center">
+    <div className="h-screen flex justify-center">
       {/* This section is Profile Pic of a user */}
       <div className="flex w-[40%] justify-center pt-10">
         <Avatar src="/images/logo.png" sx={{ width: 200, height: 200 }} />

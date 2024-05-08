@@ -62,7 +62,7 @@ const LeftNavBarContainer = () => {
         return isActive ? <Search /> : <SearchOutlined />;
       case 'EXPLORE':
         return isActive ? <Explore /> : <ExploreOutlined />;
-      case 'MESSAGES':
+      case 'CHATS':
         return isActive ? <Message /> : <MessageOutlined />;
       case 'NOTIFICATIONS':
         return isActive ? <Notifications /> : <NotificationsNoneOutlined />;

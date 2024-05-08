@@ -1,14 +1,14 @@
-import type { MiddlewareAPI, Middleware } from '@reduxjs/toolkit';
+import { Error } from '@mui/icons-material';
+import type { Middleware, MiddlewareAPI } from '@reduxjs/toolkit';
 import { isRejectedWithValue } from '@reduxjs/toolkit';
 import { toast } from 'react-toastify';
-import { Error } from '@mui/icons-material';
 
 import { IErrorResponse } from '../interfaces';
 
 const ErrorMiddleWare: Middleware = (api: MiddlewareAPI) => (next) => (action) => {
   if (isRejectedWithValue(action)) {
     const error: IErrorResponse = action.payload as IErrorResponse;
-    toast(error.data.error, {
+    toast(error.data.error ?? 'Something Went Wrong', {
       type: 'error',
       icon: <Error className="text-darkRed" />,
     });

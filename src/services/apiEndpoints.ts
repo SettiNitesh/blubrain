@@ -6,4 +6,7 @@ export const API_ENDPOINTS = {
     signIn: `${HMS_PATH}/auth/signIn`,
     refreshToken: `${HMS_PATH}/auth/refreshToken`,
   },
+  profile: {
+    currentUserDetails: (userId: string) => `/profiles/${userId}/userDetails`,
+  },
 };

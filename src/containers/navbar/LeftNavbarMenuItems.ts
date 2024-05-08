@@ -24,7 +24,7 @@ const leftbarMenuItems = [
   },
   {
     id: 4,
-    label: 'Messages',
+    label: 'Chats',
     active: false,
     path: AppPath.messages,
     subPaths: [],

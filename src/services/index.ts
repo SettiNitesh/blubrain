@@ -1,3 +1,4 @@
-import { useRegisterMutation, useLoginMutation } from './auth/authService';
+import { useLoginMutation, useRegisterMutation } from './auth/authService';
+import { useGetCurrentUserDetailsQuery } from './profile/profileService';
 
-export { useRegisterMutation, useLoginMutation };
+export { useGetCurrentUserDetailsQuery, useLoginMutation, useRegisterMutation };

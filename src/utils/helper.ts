@@ -50,3 +50,4 @@ export const isEqual = (
 };
 
 export const HMS_PATH = `/api/v1/hms`;
+export const SOCIAL_MEDIA_PATH = `/api/v1/social`;
